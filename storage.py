@@ -2,25 +2,36 @@
 
 class library():
     def __init__(self):
-        self.name ="Hy Lina"
-        self.book=""
-        self.delete=""
-        self.dictionary = "love in paradise\n" "A YEAR WITHOUTH YOU\n" "IM-POSSIBLE?\n"  "THE LITTLE PRINCE\n" "PRIDE AND PREJUDICE\n"
-
+        self.author =""
+        self.name=""
+        self.title=""
+        self.price=0
+        self.books={}
+        
    
     def add(self):
-        self.book=input("what book would you like to buy?\n")
-        print("you have added\n:",self.book)
-        
-    def sell(self):
-        self.delete=input("what you would like to delete?\n")
-        
-        print("you have delted",self.delete)
+       self.tittle=input("Enter the name of the book you would like to add\n").upper()
+       self.author=input("Enter the Author of the book you have just added\n").upper()
+       self.price=float(input("Enter the listing price of the book\n"))
+       self.books[self.tittle]={"Author":self.author,"price":self.price}
+       print(self.books)
 
-    #def print_inventory():
-        print("\nYour books:")
-    
-    #for book, has_book in self.dictionary():
-        #if has_book:
-           # print(f"- {book}")
+    def sell(self):
+        self.delete=input("what you would like to sell?\n")
+        try:
+            str(self.name)
+            if self.name in self.books:
+                self.books.pop(self.name)
+            print("the remaining books are:",self.books)
+        except:
+            print("please enter a book tittle ")
+
+
+    def showboook(self):
+        for x in self.books:
+            print("\nBook title",x,"") 
+                  
+                  
+
+      
    
