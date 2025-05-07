@@ -34,23 +34,24 @@ class library():
             print(self.books[x]['price'])     
 
     def options (self):
-        self.file=input('would you like to crate a file with this information?\n 1.yes\n2.no\nEnter choice(1/2):')
-        if self.file=="1":
-            with open("myfile.txt", "x")as f:
+       # file=input('would you like to crate a file with this information?\n 1.yes\n2.no\nEnter choice(1/2):')
+        try:
+        #if self.file=="1":
+            with open("myfile.txt", "w")as file:
                 myfile = open('myfile.txt', 'w')
+              
             self.books[self.title] = {'Author':self.author, 'price': self.price}
             for x in self.books:
-                myfile.write("Book title\n",x,"") 
+                myfile.write(x)
                 myfile.write("\n")
                 myfile.write(self.books[x]['Author'])
                 myfile.write("\n")
                 myfile.write(self.books[x]['price'])
                 myfile.write("\n")
             myfile.close()
-            myfile.write("\n")
             print(myfile)
-            
-        elif self.file == "2":
+        except FileNotFoundError:
+        #elif self.file == "2":
             print("No file created")
 
 
