@@ -8,7 +8,7 @@ v=""
 
 
 while v !="quit":
-        v = input("would you like to add a book?\n1. for yes \n2 for no\n3.show library\n4. create a file\nEnter choice (1/2/3/4): " )
+        v = input("\nwould you like to add a book?\n1. for yes \n2 for delete\n3.show library\n4. create a file\nEnter choice (1/2/3/4): " )
         if v=="1":
                 c=b.add()
         elif v=="2":
@@ -16,5 +16,5 @@ while v !="quit":
         elif v=="3":
                 c=b.showboook()
         elif v=="4":
-                c=b.data()
+                c=b.options()
                 
