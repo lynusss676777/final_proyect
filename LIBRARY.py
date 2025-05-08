@@ -14,7 +14,7 @@ while v !="quit":
         elif v=="2":
                 c=b.sell()
         elif v=="3":
-                c=b.showboook()
+                c=b.showbook()
         elif v=="4":
                 c=b.options()
                 
