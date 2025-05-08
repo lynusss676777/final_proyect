@@ -41,13 +41,13 @@ class library():
         file_name = name+".txt"
        
         with open(file_name, "w")as file:
-            file.write(f"Author: {self.showbook}")
-            file.write(f"\nprice: {self.price}")
-
-
-
-            """file.write(text)
+            file.write(f"Author: { self.books[self.showbook]}")
             
+            file.write(f"\nprice: {self.books[self.showbook]}")
+ 
+            """file.write(text)
+             
+              
                 file.write(x)
                 file.write("\n")
                 file.write(self.books[x]['Author'])
