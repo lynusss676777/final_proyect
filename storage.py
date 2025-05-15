@@ -18,12 +18,13 @@ class library():
        print(self.books)
 
     def sell(self):
-        self.delete=input("what you would like to sell?\n")
+        self.delete=input("what you would like to sell?\n").upper()
         try:
-            str(self.name)
-            if self.name in self.books:
-                self.books.pop(self.name)
-            print("the remaining books are:",self.books)
+        
+            str(self.delete)
+            if self.delete in self.books:
+                self.books.pop(self.delete)
+                print("the remaining books are:",self.books)
         except:
             print("please enter a book tittle ")
 
@@ -35,15 +36,21 @@ class library():
             print(self.books[x]['price'])     
 
     def options (self) :
-        
+       
        
         name = input("how would you like to call this file\n")
         file_name = name+".txt"
-       
+        for x in self.books:
+            nombre=(x) 
+            escritor=(self.books[x]['Author'])     
+            precio=(self.books[x]['price'])     
+        
         with open(file_name, "w")as file:
-            file.write(f"Author: { self.books[self.showbook]}")
-            
-            file.write(f"\nprice: {self.books[self.showbook]}")
+            file.write(f"tittle: { nombre}")
+            file.write("\n")
+            file.write(f"\nAuthor: { escritor}")
+            file.write("\n")
+            file.write(f"\nprice: {precio}")
  
             """file.write(text)
              
