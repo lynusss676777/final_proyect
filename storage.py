@@ -37,47 +37,32 @@ class library():
 
     def options (self) :
        
-       
-        name = input("how would you like to call this file\n")
-        file_name = name+".txt"
-        for x in self.books:
-            nombre=(x) 
-            escritor=(self.books[x]['Author'])     
-            precio=(self.books[x]['price'])     
-        
-        with open(file_name, "w")as file:
-            file.write(f"tittle: { nombre}")
-            file.write("\n")
-            file.write(f"\nAuthor: { escritor}")
-            file.write("\n")
-            file.write(f"\nprice: {precio}")
- 
-            """file.write(text)
-             
-              
-                file.write(x)
-                file.write("\n")
-                file.write(self.books[x]['Author'])
-                file.write("\n")
-                file.write(self.books[x]['price'])
-                file.write("\n")
-        print("Successfully Created a file")
-       # file=input('would you like to crate a file with this information?\n 1.yes\n2.no\nEnter choice(1/2):')
-"""
-"""try:
-        #if self.file=="1":
+     option33=input('would you like to crate a file with this information or load a file\n 1.create\n2.load\n3.Quit\nEnter choice(1/2/3):')
+     if option33=="1":
+  
+            name = input("how would you like to call this file\n")
+            file_name = name+".txt"
+            for x in self.books:
+                nombre=(x) 
+                escritor=(self.books[x]['Author'])     
+                precio=(self.books[x]['price'])     
             
-                myfile = open('myfile.txt', 'w')
-              
-            self.books[self.title] = {'Author':self.author, 'price': self.price}
+            with open(file_name, "w")as file:
+                file.write(f" { nombre}")
+                file.write("\n")
+                file.write(f"\n { escritor}")
+                file.write("\n")
+                file.write(f"\n {precio}")
+                print("Successfully Created a file")
             
-            myfile.close()
-            print(myfile)
-        except FileNotFoundError:
-        #elif self.file == "2":
-            print("No file created")"""
 
-
+     elif option33=="2":
+        with open(file_name, 'r') as file:
+            lines = file.readlines()    
+            print(lines) 
+          
+     elif option33=="3":
+         print("No file created or loaded ")
 
                 
                 
