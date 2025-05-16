@@ -9,7 +9,7 @@ class library():
         self.price=0
         self.books={}
         self.name=""
-   
+        self.importar=""
     def add(self):
        self.tittle=input("\nEnter the name of the book you would like to add\n").upper()
        self.author=input("\nEnter the Author of the book you have just added\n").upper()
@@ -30,10 +30,13 @@ class library():
 
 
     def showbook(self):
+        print(self.importar)
         for x in self.books:
             print("\nBook title\n",x,"") 
             print(self.books[x]['Author'])     
             print(self.books[x]['price'])     
+            
+
 
     def options (self) :
        
@@ -42,25 +45,29 @@ class library():
   
             name = input("how would you like to call this file\n")
             file_name = name+".txt"
-            for x in self.books:
-                nombre=(x) 
+            with open(file_name, "w")as file:
+             for x in self.books:
+                nombre=(x)
                 escritor=(self.books[x]['Author'])     
                 precio=(self.books[x]['price'])     
             
-            with open(file_name, "w")as file:
-                file.write(f" { nombre}")
+
+                file.write(nombre)
                 file.write("\n")
-                file.write(f"\n { escritor}")
+                file.write( escritor)
                 file.write("\n")
-                file.write(f"\n {precio}")
+                file.write(f"{precio}")
+                file.write("\n")
                 print("Successfully Created a file")
             
 
      elif option33=="2":
-        with open(file_name, 'r') as file:
+         name3 = input("what file would you like to load\n")
+         file_name9 = name3+".txt"
+         with open(file_name9, 'r') as file:
             lines = file.readlines()    
-            print(lines) 
-          
+            self.importar= (lines)
+            print(lines)
      elif option33=="3":
          print("No file created or loaded ")
 
