@@ -11,10 +11,10 @@ class library():
         self.name=""
         self.importar=""
     def add(self):
-       self.tittle=input("\nEnter the name of the book you would like to add\n").upper()
-       self.author=input("\nEnter the Author of the book you have just added\n").upper()
-       self.price=float(input("\nEnter the listing price of the book\n"))
-       self.books[self.tittle]={'Author':self.author,'price':self.price}
+        self.tittle=input("\nEnter the name of the book you would like to add\n").upper()
+        self.author=input("\nEnter the Author of the book you have just added\n").upper()
+        self.price=float(input("\nEnter the listing price of the book\n"))
+        self.books[self.tittle]={'Author':self.author,'price':self.price}
        print(self.books)
 
     def sell(self):
@@ -31,6 +31,7 @@ class library():
 
     def showbook(self):
         print(self.importar)
+    
         for x in self.books:
             print("\nBook title\n",x,"") 
             print(self.books[x]['Author'])     
@@ -68,7 +69,7 @@ class library():
             lines = file.readlines()    
             self.importar= (lines)
             print(lines)
-     elif option33=="3":
+     elif   option33=="3":
          print("No file created or loaded ")
 
                 
